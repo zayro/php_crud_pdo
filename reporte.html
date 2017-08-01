@@ -1,0 +1,113 @@
+<div ng-cloak>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Reporte 1">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Reporte 1</h1>
+
+                    <p>a) Cuál es la cantidad de productos por proveedor.</p>
+                    <p>
+                        <md-table-container>
+                            <table md-table md-progress="promise">
+                                <thead md-head md-order="ordenar">
+                                    <tr md-row>
+                                        <th md-column md-numeric><span>id</span></th>
+                                        <th md-column>proveedor</th>
+                                        <th md-column>cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody md-body>
+                                    <tr md-row ng-repeat="dato in reporte1">
+                                        <td md-cell>{{dato.id | number: 0}}</td>
+                                        <td md-cell>{{dato.proveedor}}</td>
+                                        <td md-cell>{{dato.cantidad | number: 0}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-table-container>
+                    </p>
+                </md-content>
+            </md-tab>
+            <md-tab label="Reporte 2">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Reporte 2</h1>
+                    <p>b) Cuales productos NO tienen un proveedor asignado..</p>
+                    <p>
+                        <md-table-container>
+                            <table md-table md-progress="promise">
+                                <thead md-head md-order="ordenar">
+                                    <tr md-row>
+                                        <th md-column md-numeric><span>id</span></th>
+                                        <th md-column>producto</th>
+                                    </tr>
+                                </thead>
+                                <tbody md-body>
+                                    <tr md-row ng-repeat="dato in reporte2">
+                                        <td md-cell>{{dato.id | number: 0}}</td>
+                                        <td md-cell>{{dato.producto}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-table-container>
+                    </p>
+                </md-content>
+
+
+            </md-tab>
+            <md-tab label="Reporte 3">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Reporte 3</h1>
+                    <p>c) Listar los productos por cantidad de items de mayor a menor.</p>
+                    <p>
+                        <md-table-container>
+                            <table md-table md-progress="promise">
+                                <thead md-head md-order="ordenar">
+                                    <tr md-row>
+                                        <th md-column md-numeric><span>id</span></th>
+                                        <th md-column>producto</th>
+                                        <th md-column>cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody md-body>
+                                    <tr md-row ng-repeat="dato in reporte3">
+                                        <td md-cell>{{dato.id_producto | number: 0}}</td>
+                                        <td md-cell>{{dato.producto}}</td>
+                                        <td md-cell>{{dato.cantidad}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </md-table-container>
+                    </p>
+                </md-content>
+            </md-tab>
+            <md-tab label="Reporte 4">
+                <md-content class="md-padding">
+                    <h1 class="md-display-2">Reporte 4</h1>
+                    <p>d) Obtener un listado completo de artículos donde se indique el nombre del producto la cantidad y el proveedor a quien pertenece.</p>
+                    <md-table-container>
+                        <table md-table md-progress="promise">
+                            <thead md-head md-order="ordenar">
+                                <tr md-row>
+
+                                    <th md-column md-numeric><span>id</span></th>
+                                    <th md-column>proveedor</th>
+                                    <th md-column>producto</th>
+                                    <th md-column>cantidad</th>
+
+                                </tr>
+                            </thead>
+                            <tbody md-body>
+                                <tr md-row ng-repeat="dato in consulta ">
+                                    <td md-cell>{{dato.id_bodega | number: 0}}</td>
+                                    <td md-cell>{{dato.proveedor}}</td>
+                                    <td md-cell>{{dato.producto}}</td>
+                                    <td md-cell>{{dato.cantidad | number: 0}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>

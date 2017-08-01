@@ -1,0 +1,44 @@
+<div layout="column" aria-label="_Form" ng-cloak class="md-inline-form">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>crear Producto</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelar()">
+                <md-icon md-svg-src="close" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-card-content flex layout-padding>
+
+        <div layout="column">
+
+            <md-input-container flex>
+                <label>Producto</label>
+                <md-select ng-model="DataForm.id_producto">
+                    <md-option ng-repeat="dato in select_producto" value="{{dato.id_producto}}">{{dato.nombre}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container flex>
+                <label>Proveedor</label>
+                <md-select ng-model="DataForm.id_proveedor">
+                    <md-option ng-repeat="dato in select_proveedor" value="{{dato.id_proveedor}}">{{dato.nombre}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Cantidad</label>
+                <input type="text" name="cantidad" ng-model="DataForm.cantidad" required>
+            </md-input-container>
+
+            <md-input-container>
+                <md-button type="submit" class="md-raised md-primary">enviar</md-button>
+            </md-input-container>
+        </div>
+
+
+    </md-card-content>
+
+</div>

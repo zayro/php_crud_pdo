@@ -1,0 +1,51 @@
+<div ng-cloak>
+
+
+    <div class="md-table-toolbar md-default">
+        <div class="md-toolbar-tools">
+
+            <form flex name="filter.form" class="flex">
+
+                <md-select ng-model="filter.search.proveedor" placeholder="seleccion proveedor">
+                    <md-option ng-repeat="dato in select_proveedor" value="{{dato.nombre}}">{{dato.nombre}}</md-option>
+                </md-select>
+
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- tabla -->
+
+
+    <md-table-container>
+        <table md-table md-progress="promise">
+            <thead md-head md-order="ordenar">
+                <tr md-row>
+
+                    <th md-column md-numeric><span>id</span></th>
+                    <th md-column>proveedor</th>
+                    <th md-column md-order-by="producto">producto</th>
+                    <th md-column>cantidad</th>
+                    <th md-column>acciones</th>
+
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row ng-repeat="dato in consulta |  filter: filter.search | orderBy: ordenar">
+                    <td md-cell>{{dato.id_bodega | number: 0}}</td>
+                    <td md-cell>{{dato.proveedor}}</td>
+                    <td md-cell>{{dato.producto}}</td>
+                    <td md-cell>{{dato.cantidad | number: 0}}</td>
+                    <td md-cell><i ng-click="eliminar(dato.id_bodega) " class="material-icons ">delete</i>
+                        <i ng-click="dialog($event, 'update.html', dato); " class="material-icons ">update</i>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+
+
+</div>
