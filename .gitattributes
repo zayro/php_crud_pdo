@@ -2,11 +2,11 @@
 ./backend/* linguist-vendored
 
 # ignora porcentaje de codigo html
-./*.html linguist-vendored=false
-./*.js linguist-vendored=false
+*.html linguist-vendored=false
+*.js linguist-vendored=false
 
 # ignora lenguaje programacion
-./*.html linguist-detectable=false
+*.html linguist-detectable=false
 
 
 
