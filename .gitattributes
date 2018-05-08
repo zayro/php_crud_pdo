@@ -1,0 +1,5 @@
+# Archivos analizar
+backend/* linguist-vendored
+
+# Analizar archivos Sql
+*.sql linguist-generated=true
